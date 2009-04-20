@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Class-Data-Inheritable
-version:             0.07
+version:             0.08
 abstract:            Inheritable, overridable class data
 license:             perl
 author:              ~
