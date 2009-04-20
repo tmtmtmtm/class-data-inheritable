@@ -10,7 +10,10 @@ SYNOPSIS
 
       # Declare the location of the data file for this class.
       Stuff->DataFile('/etc/stuff/data');
-  
+
+      # Or, all in one shot:
+      Stuff->mk_classdata(DataFile => '/etc/stuff/data');
+
 DESCRIPTION
     Class::Data::Inheritable is for creating accessor/mutators to class
     data. That is, if you want to store something about your class as a
@@ -62,10 +65,12 @@ DESCRIPTION
 Methods
   mk_classdata
       Class->mk_classdata($data_accessor_name);
+      Class->mk_classdata($data_accessor_name => $value);
 
     This is a class method used to declare new class data accessors. A new
     accessor will be created in the Class using the name from
-    $data_accessor_name.
+    $data_accessor_name, and optionally initially setting it to the given
+    value.
 
     To facilitate overriding, mk_classdata creates an alias to the accessor,
     _field_accessor(). So Suitcase() would have an alias
@@ -89,15 +94,14 @@ AUTHOR
 
 BUGS and QUERIES
     Please direct all correspondence regarding this module to:
-    bug-Bit-Vector-Minimal@rt.cpan.org
+    bug-Class-Data-Inheritable@rt.cpan.org
 
 COPYRIGHT and LICENSE
     Copyright (c) 2000-2005, Damian Conway and Michael G Schwern. All Rights
     Reserved.
 
     This module is free software. It may be used, redistributed and/or
-    modified under the terms of the Perl Artistic License (see
-    http://www.perl.com/perl/misc/Artistic.html)
+    modified under the same terms as Perl itself.
 
 SEE ALSO
     perltootc has a very elaborate discussion of class data in Perl.
