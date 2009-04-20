@@ -2,7 +2,7 @@ package Class::Data::Inheritable;
 
 use strict qw(vars subs);
 use vars qw($VERSION);
-$VERSION = '0.03';
+$VERSION = '0.04';
 
 sub mk_classdata {
     my ($declaredclass, $attribute, $data) = @_;
@@ -43,7 +43,10 @@ Class::Data::Inheritable - Inheritable, overridable class data
 
   # Declare the location of the data file for this class.
   Stuff->DataFile('/etc/stuff/data');
-  
+
+  # Or, all in one shot:
+  Stuff->mk_classdata(DataFile => '/etc/stuff/data');
+
 =head1 DESCRIPTION
 
 Class::Data::Inheritable is for creating accessor/mutators to class
@@ -98,10 +101,12 @@ no longer effect Raygun.
 =head2 mk_classdata
 
   Class->mk_classdata($data_accessor_name);
+  Class->mk_classdata($data_accessor_name => $value);
 
-This is a class method used to declare new class data accessors.  A
-new accessor will be created in the Class using the name from
-$data_accessor_name.  
+This is a class method used to declare new class data accessors.
+A new accessor will be created in the Class using the name from
+$data_accessor_name, and optionally initially setting it to the given
+value.
 
 To facilitate overriding, mk_classdata creates an alias to the
 accessor, _field_accessor().  So Suitcase() would have an alias

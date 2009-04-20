@@ -2,8 +2,10 @@ Changes
 doc/jp/Class-Data-Inheritable.pod
 lib/Class/Data/Inheritable.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
+MANIFEST.SKIP
+META.yml
+README
 t/Inheritable.t
 t/pod-coverage.t
 t/pod.t
-META.yml                                 Module meta-data (added by MakeMaker)
