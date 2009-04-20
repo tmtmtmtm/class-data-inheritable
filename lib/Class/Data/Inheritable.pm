@@ -2,7 +2,7 @@ package Class::Data::Inheritable;
 
 use strict qw(vars subs);
 use vars qw($VERSION);
-$VERSION = '0.04';
+$VERSION = '0.05';
 
 sub mk_classdata {
     my ($declaredclass, $attribute, $data) = @_;
@@ -26,6 +26,8 @@ sub mk_classdata {
     *{$declaredclass.'::'.$attribute} = $accessor;
     *{$declaredclass.'::'.$alias}     = $accessor;
 }
+
+1;
 
 __END__
 
@@ -132,7 +134,7 @@ Now maintained by Tony Bowden.
 =head1 BUGS and QUERIES
 
 Please direct all correspondence regarding this module to:
-  bug-Bit-Vector-Minimal@rt.cpan.org
+  bug-Class-Data-Inheritable@rt.cpan.org
 
 =head1 COPYRIGHT and LICENSE
 
@@ -147,6 +149,3 @@ http://www.perl.com/perl/misc/Artistic.html)
 
 L<perltootc> has a very elaborate discussion of class data in Perl.
 
-=cut
-
-1;

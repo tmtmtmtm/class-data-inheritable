@@ -1,6 +1,10 @@
+
+0.05  Sat Aug 26 18:27:12 UTC 2006
+    - Use correct bug reporting address (Jonathan Rockway)
+
 0.04  Sat Sep 24 12:36:56 UTC 2005
     - Tony Bowden now maintainer
-    - Document how to value when creating data
+    - Document how to set value when creating data
     - Complete rewrite of tests
 
 0.03  Tue Mar 11 18:30:01 GMT 2003
